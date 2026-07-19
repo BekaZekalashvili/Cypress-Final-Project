@@ -1,0 +1,26 @@
+[
+  {
+    "scenario": "სახელით A→Z",
+    "value": "az",
+    "field": "name",
+    "order": "asc"
+  },
+  {
+    "scenario": "სახელით Z→A",
+    "value": "za",
+    "field": "name",
+    "order": "desc"
+  },
+  {
+    "scenario": "ფასი ზრდადი (low to high)",
+    "value": "lohi",
+    "field": "price",
+    "order": "asc"
+  },
+  {
+    "scenario": "ფასი კლებადი (high to low)",
+    "value": "hilo",
+    "field": "price",
+    "order": "desc"
+  }
+]

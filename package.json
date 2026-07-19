@@ -1,0 +1,12 @@
+{
+  "name": "saucedemo-e2e-automation",
+  "version": "1.0.0",
+  "description": "სრული E2E ავტომატიზაცია Swag Labs (saucedemo.com) მაღაზიისთვის — Cypress",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.15.0"
+  }
+}

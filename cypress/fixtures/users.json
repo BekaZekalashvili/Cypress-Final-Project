@@ -1,0 +1,44 @@
+[
+  {
+    "scenario": "წარმატებული ლოგინი",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expectedType": "url",
+    "expected": "/inventory.html"
+  },
+  {
+    "scenario": "დაბლოკილი მომხმარებელი",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "expectedType": "error",
+    "expected": "locked out"
+  },
+  {
+    "scenario": "არასწორი პაროლი",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expectedType": "error",
+    "expected": "do not match"
+  },
+  {
+    "scenario": "ცარიელი username",
+    "username": "",
+    "password": "secret_sauce",
+    "expectedType": "error",
+    "expected": "Username is required"
+  },
+  {
+    "scenario": "ცარიელი პაროლი",
+    "username": "standard_user",
+    "password": "",
+    "expectedType": "error",
+    "expected": "Password is required"
+  },
+  {
+    "scenario": "ორივე ველი ცარიელი",
+    "username": "",
+    "password": "",
+    "expectedType": "error",
+    "expected": "Username is required"
+  }
+]

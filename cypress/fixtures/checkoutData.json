@@ -1,0 +1,53 @@
+{
+  "valid": {
+    "firstName": "გიორგი",
+    "lastName": "ბერიძე",
+    "zip": "0179"
+  },
+  "invalidCases": [
+    {
+      "scenario": "ცარიელი First Name",
+      "firstName": "",
+      "lastName": "ბერიძე",
+      "zip": "0179",
+      "expectedError": "First Name is required"
+    },
+    {
+      "scenario": "ცარიელი Last Name",
+      "firstName": "გიორგი",
+      "lastName": "",
+      "zip": "0179",
+      "expectedError": "Last Name is required"
+    },
+    {
+      "scenario": "ცარიელი Postal Code",
+      "firstName": "გიორგი",
+      "lastName": "ბერიძე",
+      "zip": "",
+      "expectedError": "Postal Code is required"
+    }
+  ],
+  "multiPurchase": [
+    {
+      "scenario": "ერთი ნივთის შესყიდვა",
+      "products": ["sauce-labs-backpack"],
+      "firstName": "ნინო",
+      "lastName": "კვარაცხელია",
+      "zip": "1000"
+    },
+    {
+      "scenario": "ორი ნივთის შესყიდვა",
+      "products": ["sauce-labs-bike-light", "sauce-labs-bolt-t-shirt"],
+      "firstName": "დავით",
+      "lastName": "მაისურაძე",
+      "zip": "3300"
+    },
+    {
+      "scenario": "სამი ნივთის შესყიდვა",
+      "products": ["sauce-labs-backpack", "sauce-labs-fleece-jacket", "sauce-labs-onesie"],
+      "firstName": "მარიამ",
+      "lastName": "ჩხაიძე",
+      "zip": "6000"
+    }
+  ]
+}
