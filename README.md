@@ -1,6 +1,4 @@
-# README-File
-
-## Cypress ავტომატიზაცია — Swag Labs (saucedemo.com)
+# Cypress ავტომატიზაცია — Swag Labs (saucedemo.com)
 
 ამ პროექტის ნაწილში შესრულდა Swag Labs-ის სრული E2E ავტომატიზაცია Cypress-ით:
 
@@ -72,80 +70,95 @@ CI ბეჯი (ჩასასმელად შეცვალეთ USER/RE
 
 ### 4 — Bug Hunt: problem_user
 
-⚠️ მნიშვნელოვანი შენიშვნა: ეს რეპორტი ეფუძნება საჯაროდ ცნობილ, საყოველთაოდ დოკუმენტირებულ problem_user-ის ქცევას saucedemo.com-ზე. ტესტების ავტორმა (ე.ი. მე) სანამ README-ში ჩასვამთ, problem_user-ით და დაადასტურეთ ეს ორივე ბაგი.
+⚠️ მნიშვნელოვანი შენიშვნა: ეს რეპორტი ეფუძნება საჯაროდ ცნობილ, საყოველთაოდ დოკუმენტირებულ problem_user-ის ქცევას saucedemo.com-ზე. ტესტების გასაშვებად problem_user-ით, დროებით შეცვალეთ default მნიშვნელობა `cy.login()`-ში ან გამოიძახეთ `cy.login('problem_user', 'secret_sauce')`.
 
-ტესტების გასაშვებად problem_user-ით, დროებით შეცვალეთ default მნიშვნელობა cy.login()-ში ან გამოიძახეთ cy.login('problem_user', 'secret_sauce').
+**Bug Reports — Swag Labs (problem_user)**
+[Google Doc ბმული](https://docs.google.com/document/d/1aqa45bkSl99JOblTTkqCXwvP_VOK5LAo7rhKr1JuxQM/edit?usp=sharing)
 
+---
 
-Bug Reports — Swag Labs (problem_user)
-https://docs.google.com/document/d/1aqa45bkSl99JOblTTkqCXwvP_VOK5LAo7rhKr1JuxQM/edit?usp=sharing
-Bug Report #1
-გარემო  /  Environment
-●        Website: Swag Labs (saucedemo.com)
-●        Environment: Test/Demo
-●        Browser: Chrome (Version 115.0)
-●        OS: Windows 11
-წინაპირობა  /  Precondition
+#### Bug Report #1
+
+**გარემო / Environment**
+- Website: Swag Labs (saucedemo.com)
+- Environment: Test/Demo
+- Browser: Chrome (Version 115.0)
+- OS: Windows 11
+
+**წინაპირობა / Precondition**
 მომხმარებელი ავტორიზებულია სისტემაში (user: problem_user). გახსნილია მთავარი გვერდი (https://www.saucedemo.com/inventory.html).
-სათაური  /  Title
-Inventory გვერდზე ყველა პროდუქტს ერთი და იგივე სურათი აქვს
-აღწერა  /  Description
-problem_user-ით ავტორიზაციის შემდეგ Inventory (Products) გვერდზე ყველა პროდუქტის ბარათს ერთი და იგივე სურათი აქვს, მიუხედავად იმისა, რომ პროდუქტები განსხვავებულია (ზურგჩანთა, ველოსიპედის შუქურა, მაისური, ჟაკეტი და ა.შ.). სურათი, რომელიც ყველგან ჩნდება, ძაღლის ფოტოა ბურთით პირში — ეს არ შეესაბამება არცერთ პროდუქტს.
-URL  /  URL
-https://www.saucedemo.com/inventory.html
-ნაბიჯები  /  Steps to Reproduce
-●        გახსენით saucedemo.com.
-●        შედით სისტემაში problem_user / secret_sauce მონაცემებით.
-●        გახსენით Inventory (Products) გვერდი.
-●        დააკვირდით თითოეული პროდუქტის ბარათის სურათს.
-რეალური შედეგი  /  Actual Result
-ექვსივე პროდუქტს (Backpack, Bike Light, Bolt T-Shirt, Fleece Jacket, Onesie, Test.allTheThings() T-Shirt) ერთი და იგივე სურათი აქვს — ძაღლის ფოტო. სურათები არ შეესაბამება პროდუქტების რეალურ დასახელებას/ტიპს.
-მოსალოდნელი შედეგი  /  Expected Result
-თითოეულ პროდუქტს უნდა გააჩნდეს საკუთარი, უნიკალური და მისი აღწერის შესაბამისი სურათი.
-სიმძიმე  /  Severity
-Medium
-პრიორიტეტი  /  Priority
-High
-სქრინშოტი  /  Screenshot 
- Bug Report #2
-გარემო  /  Environment
-●        Website: Swag Labs (saucedemo.com)
-●        Environment: Test/Demo
-●        Browser: Chrome (Version 115.0)
-●        OS: Windows 11
-წინაპირობა  /  Precondition
-მომხმარებელი ავტორიზებულია სისტემაში (user: problem_user). გახსნილია მთავარი გვერდი (https://www.saucedemo.com/inventory.html). Sauce Labs Backpack, Bike Light და Onesie უკვე დამატებულია კალათაში.
-სათაური  /  Title
-სამი კონკრეტული პროდუქტისთვის "Add to cart" ღილაკი არ ამატებს პროდუქტს კალათაში
-აღწერა  /  Description
-problem_user-ით ავტორიზაციის შემდეგ Inventory გვერდზე კონკრეტულად სამ პროდუქტზე — Sauce Labs Bolt T-Shirt, Sauce Labs Fleece Jacket და Test.allTheThings() T-Shirt (Red) — "Add to cart" ღილაკზე დაკლიკება არანაირ ეფექტს არ იძლევა. ღილაკი არ იცვლება "Remove"-ზე და პროდუქტი კალათაში არ ემატება. სხვა პროდუქტებზე (Backpack, Bike Light, Onesie) იგივე მოქმედება გამართულად მუშაობს.
-URL  /  URL
-https://www.saucedemo.com/inventory.html
-ნაბიჯები  /  Steps to Reproduce
-●        გახსენით saucedemo.com.
-●        შედით სისტემაში problem_user / secret_sauce მონაცემებით.
-●        დარწმუნდით, რომ Sauce Labs Backpack, Bike Light და Onesie უკვე დამატებულია კალათაში (ან დაამატეთ ისინი).
-●        დააკლიკეთ "Add to cart" ღილაკს Sauce Labs Bolt T-Shirt-ზე.
-●        დააკლიკეთ "Add to cart" ღილაკს Sauce Labs Fleece Jacket-ზე.
-●        დააკლიკეთ "Add to cart" ღილაკს Test.allTheThings() T-Shirt (Red)-ზე.
-●        დააკვირდით სამივე ღილაკის მდგომარეობას და კალათის აიკონზე ბეჯს.
-რეალური შედეგი  /  Actual Result
-სამივე ზემოთ ჩამოთვლილ პროდუქტზე ღილაკი კვლავ აჩვენებს "Add to cart"-ს — არ იცვლება "Remove"-ზე. კალათის ბეჯზე რაოდენობა არ იზრდება ამ სამი დაკლიკებით. პროდუქტები კალათის გვერდზეც არ ჩნდება.
-მოსალოდნელი შედეგი  /  Expected Result
-"Add to cart" ღილაკზე დაკლიკებისას პროდუქტი უნდა დაემატოს კალათაში, ღილაკის წარწერა უნდა შეიცვალოს "Remove"-ზე, და კალათის ბეჯის მრიცხველი უნდა გაიზარდოს დამატებული პროდუქტების რაოდენობის შესაბამისად.
-სიმძიმე  /  Severity
-High
-პრიორიტეტი  /  Priority
-High
-სქრინშოტი  /  Screenshot
- 
-Bike Light, Onesie) გამართულად ემატება — შესაძლოა, click handler-ი სელექტიურად არ არის მიბმული ამ სამ ღილაკზე ("problem_user"-ის ცნობილი UI-glitch ქცევის ნაწილი).
 
+**სათაური / Title**
+Inventory გვერდზე ყველა პროდუქტს ერთი და იგივე სურათი აქვს
+
+**აღწერა / Description**
+problem_user-ით ავტორიზაციის შემდეგ Inventory (Products) გვერდზე ყველა პროდუქტის ბარათს ერთი და იგივე სურათი აქვს, მიუხედავად იმისა, რომ პროდუქტები განსხვავებულია (ზურგჩანთა, ველოსიპედის შუქურა, მაისური, ჟაკეტი და ა.შ.). სურათი, რომელიც ყველგან ჩნდება, ძაღლის ფოტოა ბურთით პირში — ეს არ შეესაბამება არცერთ პროდუქტს.
+
+**URL**
+https://www.saucedemo.com/inventory.html
+
+**ნაბიჯები / Steps to Reproduce**
+1. გახსენით saucedemo.com.
+2. შედით სისტემაში problem_user / secret_sauce მონაცემებით.
+3. გახსენით Inventory (Products) გვერდი.
+4. დააკვირდით თითოეული პროდუქტის ბარათის სურათს.
+
+**რეალური შედეგი / Actual Result**
+ექვსივე პროდუქტს (Backpack, Bike Light, Bolt T-Shirt, Fleece Jacket, Onesie, Test.allTheThings() T-Shirt) ერთი და იგივე სურათი აქვს — ძაღლის ფოტო. სურათები არ შეესაბამება პროდუქტების რეალურ დასახელებას/ტიპს.
+
+**მოსალოდნელი შედეგი / Expected Result**
+თითოეულ პროდუქტს უნდა გააჩნდეს საკუთარი, უნიკალური და მისი აღწერის შესაბამისი სურათი.
+
+**სიმძიმე / Severity:** Medium
+**პრიორიტეტი / Priority:** High
+**სქრინშოტი / Screenshot:** —
+
+---
+
+#### Bug Report #2
+
+**გარემო / Environment**
+- Website: Swag Labs (saucedemo.com)
+- Environment: Test/Demo
+- Browser: Chrome (Version 115.0)
+- OS: Windows 11
+
+**წინაპირობა / Precondition**
+მომხმარებელი ავტორიზებულია სისტემაში (user: problem_user). გახსნილია მთავარი გვერდი (https://www.saucedemo.com/inventory.html). Sauce Labs Backpack, Bike Light და Onesie უკვე დამატებულია კალათაში.
+
+**სათაური / Title**
+სამი კონკრეტული პროდუქტისთვის "Add to cart" ღილაკი არ ამატებს პროდუქტს კალათაში
+
+**აღწერა / Description**
+problem_user-ით ავტორიზაციის შემდეგ Inventory გვერდზე კონკრეტულად სამ პროდუქტზე — Sauce Labs Bolt T-Shirt, Sauce Labs Fleece Jacket და Test.allTheThings() T-Shirt (Red) — "Add to cart" ღილაკზე დაკლიკება არანაირ ეფექტს არ იძლევა. ღილაკი არ იცვლება "Remove"-ზე და პროდუქტი კალათაში არ ემატება. სხვა პროდუქტებზე (Backpack, Bike Light, Onesie) იგივე მოქმედება გამართულად მუშაობს.
+
+**URL**
+https://www.saucedemo.com/inventory.html
+
+**ნაბიჯები / Steps to Reproduce**
+1. გახსენით saucedemo.com.
+2. შედით სისტემაში problem_user / secret_sauce მონაცემებით.
+3. დარწმუნდით, რომ Sauce Labs Backpack, Bike Light და Onesie უკვე დამატებულია კალათაში (ან დაამატეთ ისინი).
+4. დააკლიკეთ "Add to cart" ღილაკს Sauce Labs Bolt T-Shirt-ზე.
+5. დააკლიკეთ "Add to cart" ღილაკს Sauce Labs Fleece Jacket-ზე.
+6. დააკლიკეთ "Add to cart" ღილაკს Test.allTheThings() T-Shirt (Red)-ზე.
+7. დააკვირდით სამივე ღილაკის მდგომარეობას და კალათის აიკონზე ბეჯს.
+
+**რეალური შედეგი / Actual Result**
+სამივე ზემოთ ჩამოთვლილ პროდუქტზე ღილაკი კვლავ აჩვენებს "Add to cart"-ს — არ იცვლება "Remove"-ზე. კალათის ბეჯზე რაოდენობა არ იზრდება ამ სამი დაკლიკებით. პროდუქტები კალათის გვერდზეც არ ჩნდება.
+
+**მოსალოდნელი შედეგი / Expected Result**
+"Add to cart" ღილაკზე დაკლიკებისას პროდუქტი უნდა დაემატოს კალათაში, ღილაკის წარწერა უნდა შეიცვალოს "Remove"-ზე, და კალათის ბეჯის მრიცხველი უნდა გაიზარდოს დამატებული პროდუქტების რაოდენობის შესაბამისად.
+
+**სიმძიმე / Severity:** High
+**პრიორიტეტი / Priority:** High
+**სქრინშოტი / Screenshot:** —
+
+**შენიშვნა:** სხვა პროდუქტებზე (Backpack, Bike Light, Onesie) დამატება გამართულად მუშაობს — შესაძლოა, click handler-ი სელექტიურად არ არის მიბმული ამ სამ ღილაკზე (problem_user-ის ცნობილი UI-glitch ქცევის ნაწილი).
+
+---
 
 ### 5 — შენიშვნები
 
-cy.visit() მთელს კოდში მხოლოდ ერთხელ გვხვდება — cy.login() ბრძანებაში.
-
-ცარიელი ველების შემთხვევაში (username, password, firstName და ა.შ.) commands.js-ში if პირობა ვერიდებით type('')-ის გამოძახებას.
-
-
+- `cy.visit()` მთელს კოდში მხოლოდ ერთხელ გვხვდება — `cy.login()` ბრძანებაში.
+- ცარიელი ველების შემთხვევაში (username, password, firstName და ა.შ.) `commands.js`-ში if პირობა ვერიდებით `type('')`-ის გამოძახებას.
